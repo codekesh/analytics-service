@@ -2,6 +2,8 @@ package com.aiplatform.analytics_service.controller;
 
 import com.aiplatform.analytics_service.service.AnalyticsService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -14,10 +16,10 @@ public class AnalyticsController {
         this.analyticsService = analyticsService;
     }
 
-    @GetMapping("/summary")
-    public Map<String, Object> summary(
+    @GetMapping("/diet/daily")
+    public List<Map<String, Object>> getDailyCalories(
             @RequestHeader("Authorization") String authHeader) {
 
-        return analyticsService.getSummary(authHeader);
+        return analyticsService.getDailyCalories(authHeader);
     }
 }

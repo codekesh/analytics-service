@@ -15,11 +15,10 @@ public class TrackingClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @Value("${auth.service.url}")
-    private String authServiceUrl;
+    @Value("${tracking.service.url}")
+    private String trackingServiceUrl;
 
-    public List<Map<String, Object>> fetchUserTracking(
-            String token) {
+    public List<Map<String, Object>> fetchDietTracking(String token) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", token);
@@ -27,7 +26,7 @@ public class TrackingClient {
         HttpEntity<Void> entity = new HttpEntity<>(headers);
 
         ResponseEntity<List<Map<String, Object>>> response = restTemplate.exchange(
-                authServiceUrl + "/track",
+                trackingServiceUrl + "/tracking/diet",
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference<List<Map<String, Object>>>() {
