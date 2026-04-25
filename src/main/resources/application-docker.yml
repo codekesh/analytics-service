@@ -1,6 +1,6 @@
 auth:
   service:
-    url: http://tracking-service:8080
+    url: http://tracking-service:8081
 
 server:
   port: 8082
