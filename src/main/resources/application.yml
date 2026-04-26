@@ -21,11 +21,11 @@ spring:
 # service URLs (important)
 auth:
   service:
-    url: ${AUTH_SERVICE_URL:http://localhost:8081}
+    url: ${AUTH_SERVICE_URL:http://localhost:8080}
 
 tracking:
   service:
-    url: ${TRACKING_SERVICE_URL:http://localhost:8082}
+    url: ${TRACKING_SERVICE_URL:http://localhost:8081}
 
 ai:
   service:
